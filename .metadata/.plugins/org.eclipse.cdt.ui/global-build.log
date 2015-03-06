@@ -1,0 +1,34 @@
+23:39:42 **** Rebuild of configuration Debug for project tp1 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp1\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp1\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+In file included from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/bind.hpp:29:0,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind.hpp:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute_determine_library.h:37,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute_test.h:23,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute_suite.h:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute.h:29,
+                 from ..\src\Defs.h:8,
+                 from ..\src\Test.cpp:1:
+C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/arg.hpp: In constructor 'boost::arg<I>::arg(const T&)':
+C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/arg.hpp:37:22: warning: typedef 'T_must_be_placeholder' locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+g++ -o tp1.exe "src\\Test.o" 
+Info: Nothing to build for tp1
+23:42:24 **** Rebuild of configuration Debug for project tp1 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp1\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp1\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+In file included from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/bind.hpp:29:0,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind.hpp:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute_determine_library.h:37,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute_test.h:23,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute_suite.h:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp1\cute/cute.h:29,
+                 from ..\src\Defs.h:8,
+                 from ..\src\Test.cpp:1:
+C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/arg.hpp: In constructor 'boost::arg<I>::arg(const T&)':
+C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/arg.hpp:37:22: warning: typedef 'T_must_be_placeholder' locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+g++ -o tp1.exe "src\\Test.o" 
+Info: Nothing to build for tp1
