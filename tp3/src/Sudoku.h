@@ -66,8 +66,7 @@ public:
 	 * Retorna indicação de sucesso ou insucesso (sudoku impossível).
 	 */
 	bool solve();
-
-
+	void choose_best(int & best_x, int & best_y);
 	/**
 	 * Imprime o Sudoku.
 	 */
