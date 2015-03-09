@@ -32,3 +32,108 @@ C:\Users\Joao\Documents\GitHub\CAL-code\tp1\boost/boost/bind/arg.hpp:37:22: warn
                       ^
 g++ -o tp1.exe "src\\Test.o" 
 Info: Nothing to build for tp1
+15:33:40 **** Rebuild of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Labirinth.o" "..\\src\\Labirinth.cpp" 
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+In file included from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/bind.hpp:29:0,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind.hpp:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_determine_library.h:37,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_test.h:23,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_suite.h:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute.h:29,
+                 from ..\src\Test.cpp:1:
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp: In constructor 'boost::arg<I>::arg(const T&)':
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp:37:22: warning: typedef 'T_must_be_placeholder' locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+..\src\Test.cpp: In function 'void runSuite()':
+..\src\Test.cpp:307:21: error: missing template arguments before 'lis'
+  cute::ide_listener lis;
+                     ^
+..\src\Test.cpp:307:21: error: expected ';' before 'lis'
+..\src\Test.cpp:308:19: error: 'lis' was not declared in this scope
+  cute::makeRunner(lis)(s, "The Suite");
+                   ^
+15:34:00 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sudoku.o" "..\\src\\Sudoku.cpp" 
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+In file included from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/bind.hpp:29:0,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind.hpp:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_determine_library.h:37,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_test.h:23,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_suite.h:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute.h:29,
+                 from ..\src\Test.cpp:1:
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp: In constructor 'boost::arg<I>::arg(const T&)':
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp:37:22: warning: typedef 'T_must_be_placeholder' locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+..\src\Test.cpp: In function 'void runSuite()':
+..\src\Test.cpp:307:21: error: missing template arguments before 'lis'
+  cute::ide_listener lis;
+                     ^
+..\src\Test.cpp:307:21: error: expected ';' before 'lis'
+..\src\Test.cpp:308:19: error: 'lis' was not declared in this scope
+  cute::makeRunner(lis)(s, "The Suite");
+                   ^
+15:34:26 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Labirinth.o" "..\\src\\Labirinth.cpp" 
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+In file included from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/bind.hpp:29:0,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind.hpp:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_determine_library.h:37,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_test.h:23,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_suite.h:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute.h:29,
+                 from ..\src\Test.cpp:1:
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp: In constructor 'boost::arg<I>::arg(const T&)':
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp:37:22: warning: typedef 'T_must_be_placeholder' locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+g++ -o tp3.exe "src\\Test.o" "src\\Sudoku.o" "src\\Labirinth.o" 
+Info: Nothing to build for tp3
+Info: Nothing to build for tp3
+15:40:24 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+In file included from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/bind.hpp:29:0,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind.hpp:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_determine_library.h:37,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_test.h:23,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute_suite.h:22,
+                 from C:\Users\Joao\Documents\GitHub\CAL-code\tp3\cute/cute.h:29,
+                 from ..\src\Test.cpp:1:
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp: In constructor 'boost::arg<I>::arg(const T&)':
+C:\Users\Joao\Documents\GitHub\CAL-code\tp3\boost/boost/bind/arg.hpp:37:22: warning: typedef 'T_must_be_placeholder' locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Labirinth.o" "..\\src\\Labirinth.cpp" 
+..\src\Labirinth.cpp: In member function 'bool Labirinth::findGoal_rec(int, int)':
+..\src\Labirinth.cpp:66:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -o tp3.exe "src\\Test.o" "src\\Sudoku.o" "src\\Labirinth.o" 
+15:40:31 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Labirinth.o" "..\\src\\Labirinth.cpp" 
+g++ -o tp3.exe "src\\Test.o" "src\\Sudoku.o" "src\\Labirinth.o" 
+Info: Nothing to build for tp3
+Info: Nothing to build for tp3
+15:41:02 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Labirinth.o" "..\\src\\Labirinth.cpp" 
+g++ -o tp3.exe "src\\Test.o" "src\\Sudoku.o" "src\\Labirinth.o" 
+Info: Nothing to build for tp3
+15:44:52 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Labirinth.o" "..\\src\\Labirinth.cpp" 
+g++ -o tp3.exe "src\\Test.o" "src\\Sudoku.o" "src\\Labirinth.o" 
+Info: Nothing to build for tp3
+15:50:48 **** Incremental Build of configuration Debug for project tp3 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\cute" "-IC:\\Users\\Joao\\Documents\\GitHub\\CAL-code\\tp3\\boost" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sudoku.o" "..\\src\\Sudoku.cpp" 
+g++ -o tp3.exe "src\\Test.o" "src\\Sudoku.o" "src\\Labirinth.o" 
+Info: Nothing to build for tp3
