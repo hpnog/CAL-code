@@ -2,7 +2,4 @@
 
 #Local files to ignore
 /.settings/
-/boost/
-/cute/
-.cproject
-.project
+
