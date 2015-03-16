@@ -10,7 +10,7 @@ using namespace std;
 
 
 void testNearestPoints_BF(string in, double res) {
-	/*vector<Ponto> pontos, pontosMP;
+	vector<Ponto> pontos, pontosMP;
 	ifstream is(in.c_str());
 	lerPontos(is, pontos);
 
@@ -19,7 +19,7 @@ void testNearestPoints_BF(string in, double res) {
 	cout << "p1:" << pontosMP[0] << endl;
 	cout << "p2:" << pontosMP[1] << endl;
 
-	ASSERT_EQUAL_DELTA(res,d,0.01);*/
+	ASSERT_EQUAL_DELTA(res,d,0.01);
 }
 
 void testNP_BruteForce() {
@@ -63,7 +63,7 @@ void testNP_BruteForce() {
 
 
 void testNearestPoints_DC(string in, double res) {
-	/*vector<Ponto> pontos, pontosMP;
+	vector<Ponto> pontos, pontosMP;
 	ifstream is(in.c_str());
 	lerPontos(is, pontos);
 
@@ -72,7 +72,7 @@ void testNearestPoints_DC(string in, double res) {
 	cout << "p1:" << pontosMP[0] << endl;
 	cout << "p2:" << pontosMP[1] << endl;
 
-	ASSERT_EQUAL_DELTA(res,d,0.01);*/
+	ASSERT_EQUAL_DELTA(res,d,0.01);
 }
 
 void testNP_DivideConquer() {

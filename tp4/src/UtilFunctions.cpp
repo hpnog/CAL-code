@@ -131,6 +131,56 @@ int GetMilliCount()
   return nCount;
 }
 //---------------------------------------------------------------------------
+double nearestPDC(vector<Ponto> & vp, int l, int r, vector<Ponto> & vMP) {
+	vMP.resize(2);
+	vector<Ponto> vMPl = vMP;
+	vector<Ponto> vMPr = vMP;
+
+	//-------------------Se apenas houver 2 pontos---------------------------------------------------
+	if ((r-l) == 1) {
+		vMP[0] = vp[l];
+		vMP[1] = vp[r];
+		return vMP[0].distancia(vMP[1]);
+	}
+	//-------------------Se apenas houver 1 ponto----------------------------------------------------
+	if (r == l)
+		return DMAXIMUM;
+
+	int middle = (r+l)/2;
+
+	//-------------------Chega ao minimo do lado esquerdo/direito------------------------------------
+	double dminL = nearestPDC(vp, l, middle, vMPl);
+	double dminR = nearestPDC(vp, middle+1, r, vMPr);
+	double dmin;
+	//-------------------Verifica qual o minimo mais pequeno-----------------------------------------
+	if (dminL < dminR) {
+		dmin = dminL;
+		vMP[0] = vMPl[0];
+		vMP[1] = vMPl[1];
+	}
+	else {
+		dmin = dminR;
+		vMP[0] = vMPr[0];
+		vMP[1] = vMPr[1];
+	}
+	//-------------------Calcula faixa central para comparações entre pontos dos 2 lados------------
+	int index = middle;
+	int indexL = index;
+	int indexR = index;
+
+	while (indexL > l && comparaPontos(vp[index], vp[indexL], X) < dmin)
+		indexL--;
+
+	while (indexR < r && comparaPontos(vp[index], vp[indexR], X) < dmin)
+		indexR++;
+	//---Com o espaço já limitado, força bruta é aplicável pois o número de pontos já é reduzido---
+	vector<Ponto> temp;
+	for (int i = indexL; i <= indexR; i++)
+		temp.push_back(vp[i]);
+
+	dmin = min(dmin, nearestPoints_BF(temp, vMP));
+	return dmin;
+}
 
 int GetMilliSpan(int nTimeStart)
 {
@@ -159,7 +209,8 @@ double nearestPoints_BF(vector<Ponto>& vp, vector<Ponto>& vMP) {
 }
 
 double nearestPoints_DC(vector<Ponto>& vp, vector<Ponto>& vMP) {
-	return 0;
+	quickSortX(vp);
+	return nearestPDC(vp, 0, vp.size()-1, vMP);
 }
 //---------------------------------------------------------------------------
 
