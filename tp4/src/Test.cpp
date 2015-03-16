@@ -118,7 +118,7 @@ void runSuite(){
 	//TODO add your test here
 	s.push_back(CUTE(testNP_BruteForce));
 	s.push_back(CUTE(testNP_DivideConquer));
-	cute::ide_listener lis;
+	cute::ide_listener<> lis;
 	cute::makeRunner(lis)(s, "The Suite");
 }
 

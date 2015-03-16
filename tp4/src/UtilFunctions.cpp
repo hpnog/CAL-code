@@ -139,5 +139,27 @@ int GetMilliSpan(int nTimeStart)
 	  nSpan += 0x100000 * 1000;
   return nSpan;
 }
+
+double nearestPoints_BF(vector<Ponto>& vp, vector<Ponto>& vMP) {
+	double dist = DMAXIMUM;
+	vMP.push_back(Ponto(0,0));
+	vMP.push_back(Ponto(0,0));
+
+	for (unsigned int i = 0; i < vp.size(); i++) {
+		for (unsigned int j = i + 1; j < vp.size(); j++) {
+			double distTemp = vp[i].distancia(vp[j]);
+			if (distTemp < dist) {
+				vMP[0] = vp[i];
+				vMP[1] = vp[j];
+				dist = distTemp;
+			}
+		}
+	}
+	return dist;
+}
+
+double nearestPoints_DC(vector<Ponto>& vp, vector<Ponto>& vMP) {
+	return 0;
+}
 //---------------------------------------------------------------------------
 
