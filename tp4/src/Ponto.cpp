@@ -9,7 +9,8 @@
 #include <cmath>
 
 Ponto::Ponto() {
-	// TODO Auto-generated constructor stub
+	x = 0;
+	y = 0;
 }
 
 Ponto::~Ponto() {
