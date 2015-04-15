@@ -1,0 +1,180 @@
+0
+Lordelo
+10
+10
+1
+R. Valado
+20
+35
+2
+R. Concelho de Boticas
+18
+28
+3
+Laverqueira
+23
+30
+4
+Escola Superior de Enfermagem
+20
+35
+5
+Instituto de Medicina Legal
+80
+30
+6
+Hospital
+100
+80
+7
+Qta. da Petisqueira
+110
+100
+8
+No IP4
+150
+150
+9
+Av. Noruega
+150
+170
+10
+Central de Camionagem
+160
+180
+11
+Tribunal
+170
+190
+12
+Mercado
+180
+170
+13
+Pioledo
+190
+165
+14
+Calvario
+200
+150
+15
+R. Sto. Antonio
+200
+140
+16
+R. Sta. Iria
+200
+120
+17
+Igreja N. Sra. Conceicao
+190
+110
+18
+B. S. Vicente Paula
+195
+90
+19
+R. Adelino Samarda
+210
+80
+20
+R. Heitor Cramez
+215
+75
+21
+Cemiterio
+225
+80
+22
+Pr. 25 de Abril
+235
+80
+23
+Curva da Timpeira
+260
+90
+24
+Rio Corgo
+280
+70
+25
+B. Sta. Maria
+300
+60
+26
+Lugar do Boque
+300
+100
+27
+Cooperativa
+300
+120
+28
+Abambres
+325
+130
+29
+B. do Alem
+325
+140
+30
+Mateus
+325
+150
+31
+R. Gaspar Sameiro
+300
+200
+32
+R. Gaspar Sameiro 2
+290
+200
+33
+C. Saude de Mateus
+280
+200
+34
+Igreja Sto. Antonio
+275
+215
+35
+Escolas Araucaria
+285
+225
+36
+R. Manuel Santos GOmes
+285
+235
+37
+R. Augusto Cesar
+270
+235
+38
+Carreira Longa
+260
+225
+39
+Av. Universidade
+250
+235
+40
+Pr. Galiza
+250
+250
+41
+UTAD Livraria
+210
+290
+42
+UTAD Pedagogico
+190
+320
+43
+UTAD - Engenharias
+210
+320
+44
+UTAD - Reitoria
+230
+300

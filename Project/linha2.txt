@@ -1,0 +1,96 @@
+45
+Qt. Fonte da Rainha
+20
+300
+46
+Ponte do Cabril
+30
+290
+47
+R. Almodena
+40
+270
+48
+Ed. Fraga
+50
+250
+49
+R. Figueiredo
+60
+240
+50
+B. Novo de Almodena
+70
+230
+51
+R. Nova das Botelhas
+80
+220
+52
+Qt. das Botelhas
+90
+210
+53
+R. Miguel Torga
+120
+180
+54
+Camara
+150
+220
+11
+
+
+
+12
+
+
+
+13
+
+
+
+55
+J. Carreira
+210
+160
+56
+Av. A. Barrigas
+220
+155
+57
+Av. Europa
+230
+130
+58
+Piscinas
+240
+120
+59
+Al. de Grasse
+250
+180
+60
+C. C. Dolce Vita
+225
+200
+61
+Av. Osnabruck
+270
+150
+62
+R. Dr. Nuno Simões
+260
+140
+63
+R. Teixeira M. e Castro
+250
+130
+64
+Lugar do Bosque
+320
+100
+65
+Vila Paulista
+325
+75
