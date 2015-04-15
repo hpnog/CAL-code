@@ -1,180 +1,180 @@
 0
 Lordelo
-10
+23
 10
 1
 R. Valado
-20
+30
 35
 2
 R. Concelho de Boticas
-18
-28
+20
+60
 3
 Laverqueira
-23
-30
+15
+42
 4
 Escola Superior de Enfermagem
 20
 35
 5
 Instituto de Medicina Legal
-80
-30
+60
+42
 6
 Hospital
-100
-80
+61
+65
 7
 Qta. da Petisqueira
-110
-100
+90
+75
 8
 No IP4
-150
-150
+107
+107
 9
 Av. Noruega
-150
-170
+110
+136
 10
 Central de Camionagem
-160
-180
+119
+127
 11
 Tribunal
-170
-190
+138
+138
 12
 Mercado
-180
-170
+144
+133
 13
 Pioledo
-190
-165
+152
+131
 14
 Calvario
-200
-150
+157
+125
 15
 R. Sto. Antonio
-200
-140
+159
+105
 16
 R. Sta. Iria
-200
-120
+162
+90
 17
 Igreja N. Sra. Conceicao
-190
-110
+153
+82
 18
 B. S. Vicente Paula
-195
-90
+155
+72
 19
 R. Adelino Samarda
-210
-80
+161
+64
 20
 R. Heitor Cramez
-215
-75
+168
+55
 21
 Cemiterio
-225
-80
+182
+56
 22
 Pr. 25 de Abril
-235
-80
+192
+58
 23
 Curva da Timpeira
-260
-90
+230
+60
 24
 Rio Corgo
-280
-70
+237
+50
 25
 B. Sta. Maria
-300
-60
+250
+40
 26
 Lugar do Boque
-300
-100
+260
+55
 27
 Cooperativa
-300
-120
+265
+87
 28
 Abambres
-325
-130
+290
+97
 29
 B. do Alem
-325
-140
+310
+121
 30
 Mateus
-325
-150
+300
+153
 31
 R. Gaspar Sameiro
-300
-200
+280
+150
 32
 R. Gaspar Sameiro 2
-290
-200
+265
+149
 33
 C. Saude de Mateus
-280
-200
+254
+150
 34
 Igreja Sto. Antonio
-275
-215
+252
+175
 35
 Escolas Araucaria
-285
-225
+263
+173
 36
-R. Manuel Santos GOmes
-285
-235
+R. Manuel Santos Gomes
+250
+185
 37
 R. Augusto Cesar
-270
-235
+243
+192
 38
 Carreira Longa
-260
-225
+233
+192
 39
 Av. Universidade
-250
 235
+175
 40
 Pr. Galiza
-250
-250
+210
+175
 41
 UTAD Livraria
-210
-290
+175
+214
 42
 UTAD Pedagogico
-190
-320
+155
+230
 43
 UTAD - Engenharias
-210
-320
+165
+250
 44
 UTAD - Reitoria
-230
-300
+183
+245

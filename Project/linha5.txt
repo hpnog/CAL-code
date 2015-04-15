@@ -1,0 +1,35 @@
+95
+Ranginha
+450
+250
+96
+Rua do Ribeiro
+420
+240
+97
+Constantim
+390
+230
+98
+Largo
+370
+220
+99
+Cruz. Couto
+340
+210
+100
+Couto
+330
+210
+101
+Torneiros
+300
+210
+102
+Vilalva
+300
+240
+40
+
+

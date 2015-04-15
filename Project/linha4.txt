@@ -1,0 +1,91 @@
+86
+Urb. Montezelos
+150
+50
+87
+Qt. de Montezelos
+170
+70
+88
+R. Pintor M. Barrias
+170
+80
+89
+Pingo de Agua
+175
+100
+17
+
+
+
+90
+Av. Cidade de Orense
+180
+120
+91
+Traslar
+150
+125
+92
+Cmdt. Morais Serrao
+140
+140
+93
+R. D. P. Castro
+140
+160
+12
+
+
+
+11
+
+
+
+54
+
+
+
+80
+
+
+
+79
+
+
+
+78
+
+
+
+56
+
+
+
+57
+
+
+
+58
+
+
+
+59
+
+
+
+60
+
+
+
+94
+Qt. Araucaria
+220
+220
+40
+
+
+
+44
+
+

@@ -32,10 +32,13 @@ void carregarFicheiro(string nome, string cor){
 			getline(myReadFile,output);
 			string nome = output;
 			getline(myReadFile,output);
-			int x = atoi(output.c_str());
+			int x = 2 * atoi(output.c_str());
 			getline(myReadFile,output);
-			int y = atoi(output.c_str());
-			if(graph.addVertex(Estacao(id,nome,Coordenadas(x,y)))){
+			int y = 2 * atoi(output.c_str());
+			if(graph.addVertex(Estacao(id,nome,Coordenadas(x,y))) && ultima.getId() < id){
+
+				cout << endl << "Adicionado no com:\nID: " << id << "\nNome: " << nome << "\nXCoord: " << x << "YCoord: " << y << endl;
+
 				gv->addNode(id,x,y);
 				gv->setVertexLabel(id,nome);
 					gv->setVertexColor(id, cor);
@@ -59,23 +62,23 @@ void carregarFicheiro(string nome, string cor){
 	}
 }
 
-
 void carregarGraphos()
 {
 	//Inicializar graphos
-	gv = new GraphViewer(600, 600, NOT_DYNAMIC);
-	gv->setBackground("background.jpg");
-	gv->createWindow(600, 600);
+	gv = new GraphViewer(1200, 1200, NOT_DYNAMIC);
+	gv->setBackground("background.png");
+	gv->createWindow(1200, 1200);
 	gv->defineVertexColor(DEFAULT_COLOR);
 	gv->defineEdgeColor(DEFAULT_COLOR);
 
 	carregarFicheiro("linha1.txt", "red");
-	carregarFicheiro("linha2.txt", "green");
-	carregarFicheiro("linha3.txt", "orange");
+	//carregarFicheiro("linha2.txt", "green");
+	//carregarFicheiro("linha3.txt", "orange");
+	//carregarFicheiro("linha4.txt", "blue");
+	//carregarFicheiro("linha5.txt", "pink");
 	gv->rearrange();
 
 }
-
 
 int main() {
 	carregarGraphos();
