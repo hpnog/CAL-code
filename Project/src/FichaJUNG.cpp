@@ -36,12 +36,9 @@ void carregarFicheiro(string nome, string cor){
 			getline(myReadFile,output);
 			int y = 2 * atoi(output.c_str());
 			if(graph.addVertex(Estacao(id,nome,Coordenadas(x,y))) && ultima.getId() < id){
-
-				cout << endl << "Adicionado no com:\nID: " << id << "\nNome: " << nome << "\nXCoord: " << x << "YCoord: " << y << endl;
-
 				gv->addNode(id,x,y);
 				gv->setVertexLabel(id,nome);
-					gv->setVertexColor(id, cor);
+				gv->setVertexColor(id, cor);
 				tempo = Estacao(id,nome,Coordenadas(x,y));
 			}else{
 				gv->setVertexColor(id, "black");
@@ -72,8 +69,8 @@ void carregarGraphos()
 	gv->defineEdgeColor(DEFAULT_COLOR);
 
 	carregarFicheiro("linha1.txt", "red");
-	//carregarFicheiro("linha2.txt", "green");
-	//carregarFicheiro("linha3.txt", "orange");
+	carregarFicheiro("linha2.txt", "green");
+	carregarFicheiro("linha3.txt", "orange");
 	//carregarFicheiro("linha4.txt", "blue");
 	//carregarFicheiro("linha5.txt", "pink");
 	gv->rearrange();

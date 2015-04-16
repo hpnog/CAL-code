@@ -1,71 +1,71 @@
 65
 IEFP
-400
-400
+381
+315
 66
 Motometer
 380
-430
+335
 67
 S. Cristovao
-360
-430
+368
+335
 68
 Basreal
-350
-400
+345
+318
 69
 Corgobus
-335
-400
+320
+306
 70
 Aerodromo
-300
-400
+306
+316
 71
 Torneiros
-300
-350
+270
+266
 72
 Vila Nova
-295
-350
+240
+251
 73
 B. Vila Nova de Baixo
-280
-340
+217
+240
 44
 
 
 
 74
 Madame Brouillard
-230
-240
+190
+205
 75
 Cruzeiro
-220
-230
+188
+183
 76
 Estacao CP
-210
-220
+185
+171
 77
 C. Boavista
-200
-220
+174
+160
 78
 P. Florestal
-200
-200
+168
+130
 79
 Museu
-200
-240
+157
+150
 80
 Rua Nova
-170
-230
+150
+160
 54
 
 
@@ -92,21 +92,21 @@ Rua Nova
 
 81
 Boxes
-210
-120
+172
+95
 82
 Pr. 25 Abril
-190
-115
+194
+70
 83
 C. C. Continente
-175
-100
+207
+40
 84
 Cr. Flores
-170
-75
+210
+30
 85
 Flores
-170
-50
+223
+30

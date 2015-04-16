@@ -1,43 +1,43 @@
 45
 Qt. Fonte da Rainha
-20
-300
+70
+200
 46
 Ponte do Cabril
-30
-290
+76
+168
 47
 R. Almodena
-40
-270
+87
+157
 48
 Ed. Fraga
-50
-250
+83
+159
 49
 R. Figueiredo
-60
-240
+86
+165
 50
 B. Novo de Almodena
-70
-230
+89
+172
 51
 R. Nova das Botelhas
-80
-220
+97
+168
 52
 Qt. das Botelhas
-90
-210
+110
+165
 53
 R. Miguel Torga
-120
-180
+125
+155
 54
 Camara
-150
-220
+138
+165
 11
 
 
@@ -52,45 +52,45 @@ Camara
 
 55
 J. Carreira
-210
-160
+165
+130
 56
 Av. A. Barrigas
-220
-155
+169
+120
 57
 Av. Europa
-230
-130
+185
+90
 58
 Piscinas
-240
-120
+205
+82
 59
 Al. de Grasse
-250
-180
+222
+130
 60
 C. C. Dolce Vita
-225
-200
+203
+146
 61
 Av. Osnabruck
-270
-150
+233
+108
 62
 R. Dr. Nuno Simões
-260
-140
+251
+90
 63
 R. Teixeira M. e Castro
-250
-130
+258
+73
 26
 
 
 
 64
 Vila Paulista
-325
-75
+290
+45
