@@ -9,13 +9,9 @@
 #define DEFAULT_COLOR "black"
 #define NOT_DYNAMIC false
 
-
-
 Graph<Estacao> graph;
 GraphViewer *gv;
 int edgeId = 0;
-
-
 
 void carregarFicheiro(string nome, string cor){
 
@@ -71,8 +67,8 @@ void carregarGraphos()
 	carregarFicheiro("linha1.txt", "red");
 	carregarFicheiro("linha2.txt", "green");
 	carregarFicheiro("linha3.txt", "orange");
-	//carregarFicheiro("linha4.txt", "blue");
-	//carregarFicheiro("linha5.txt", "pink");
+	carregarFicheiro("linha4.txt", "blue");
+	carregarFicheiro("linha5.txt", "pink");
 	gv->rearrange();
 
 }

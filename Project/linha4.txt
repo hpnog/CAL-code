@@ -1,39 +1,39 @@
 86
 Urb. Montezelos
-150
-50
+140
+48
 87
 Qt. de Montezelos
-170
-70
+151
+48
 88
 R. Pintor M. Barrias
-170
-80
+150
+60
 89
 Pingo de Agua
-175
-100
+145
+73
 17
 
 
 
 90
 Av. Cidade de Orense
-180
-120
+143
+98
 91
 Traslar
-150
-125
+130
+101
 92
 Cmdt. Morais Serrao
-140
-140
+119
+112
 93
 R. D. P. Castro
-140
-160
+118
+120
 12
 
 
@@ -80,8 +80,8 @@ R. D. P. Castro
 
 94
 Qt. Araucaria
-220
-220
+219
+150
 40
 
 
