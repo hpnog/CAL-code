@@ -11,6 +11,9 @@
 
 #define DEFAULT_COLOR "black"
 #define NOT_DYNAMIC false
+#define MAP_TO_METERS 32
+#define AVERAGE_SPEED 1/200
+#define AVERAGE_WAITING_TIME 20
 
 Graph<Estacao> graph;
 GraphViewer *gv;
@@ -18,7 +21,7 @@ vector<DadosGraficos> dg;
 int edgeId = 0;
 int tempId = -2; //para estacoes em paralelo
 
-void carregarFicheiro(string nome, string cor, int line)
+void carregarFicheiro(string nome, string cor, int line, const int choice)
 {
 
 	int lastId = -1;
@@ -53,12 +56,24 @@ void carregarFicheiro(string nome, string cor, int line)
 				nome =  graph.getVertexbyId(id).getNome();
 				graph.addVertex(Estacao(tempId,nome,Coordenadas(x,y),line));
 				tempo = graph.getVertexbyId(tempId);
-				graph.addEdge(graph.getVertexbyId(id), tempo, 1000, line);
-				graph.addEdge(tempo, graph.getVertexbyId(id), 1000, line);
-				for(int i = 0; i < graph.getVertexbyId(id).getLinked().size(); i++){
-					int id_temp = graph.getVertexbyId(id).getLinked()[i];
-					graph.addEdge(graph.getVertexbyId(id_temp), tempo, 1000, line);
-					graph.addEdge(tempo, graph.getVertexbyId(id_temp), 1000, line);
+				if (choice == 1)
+				{
+					graph.addEdge(graph.getVertexbyId(id), tempo, AVERAGE_WAITING_TIME, line);
+					graph.addEdge(tempo, graph.getVertexbyId(id), AVERAGE_WAITING_TIME, line);
+					for(int i = 0; i < graph.getVertexbyId(id).getLinked().size(); i++){
+						int id_temp = graph.getVertexbyId(id).getLinked()[i];
+						graph.addEdge(graph.getVertexbyId(id_temp), tempo, AVERAGE_WAITING_TIME, line);
+						graph.addEdge(tempo, graph.getVertexbyId(id_temp), AVERAGE_WAITING_TIME, line);
+					}
+				} else
+				{
+					graph.addEdge(graph.getVertexbyId(id), tempo, 0, line);
+					graph.addEdge(tempo, graph.getVertexbyId(id), 0, line);
+					for(int i = 0; i < graph.getVertexbyId(id).getLinked().size(); i++){
+						int id_temp = graph.getVertexbyId(id).getLinked()[i];
+						graph.addEdge(graph.getVertexbyId(id_temp), tempo, 0, line);
+						graph.addEdge(tempo, graph.getVertexbyId(id_temp), 0, line);
+					}
 				}
 				graph.getVertexbyIdPointer(id)->push_back(tempId);
 				tempId--;
@@ -70,14 +85,30 @@ void carregarFicheiro(string nome, string cor, int line)
 			}
 			else
 			{
-				double dist = sqrt(((abs(y - ultima.getCoordenadas().gety())) ^ 2) + ((abs(x - ultima.getCoordenadas().getx())) ^ 2));
-				graph.addEdge(ultima, tempo, dist, line);
-				graph.addEdge(tempo, ultima, dist, line);
-				gv->addEdge(edgeId,lastId,id,EdgeType::UNDIRECTED);
-				dg.push_back(DadosGraficos(edgeId,lastId,id));
-				dg.push_back(DadosGraficos(edgeId,id,lastId));
-				lastId = id;
-				edgeId++;
+				if (choice == 1)
+				{
+					float dist = sqrt(((abs(y - ultima.getCoordenadas().gety())) ^ 2) + ((abs(x - ultima.getCoordenadas().getx())) ^ 2));
+					float travelTime = dist * MAP_TO_METERS * AVERAGE_SPEED;
+					graph.addEdge(ultima, tempo, travelTime, line);
+					graph.addEdge(tempo, ultima, travelTime, line);
+					gv->addEdge(edgeId,lastId,id,EdgeType::UNDIRECTED);
+					dg.push_back(DadosGraficos(edgeId,lastId,id));
+					dg.push_back(DadosGraficos(edgeId,id,lastId));
+					lastId = id;
+					edgeId++;
+				}
+				else
+				{
+					float dist = sqrt(((abs(y - ultima.getCoordenadas().gety())) ^ 2) + ((abs(x - ultima.getCoordenadas().getx())) ^ 2));
+					float travel = dist * MAP_TO_METERS;
+					graph.addEdge(ultima, tempo, travel, line);
+					graph.addEdge(tempo, ultima, dist * MAP_TO_METERS, line);
+					gv->addEdge(edgeId,lastId,id,EdgeType::UNDIRECTED);
+					dg.push_back(DadosGraficos(edgeId,lastId,id));
+					dg.push_back(DadosGraficos(edgeId,id,lastId));
+					lastId = id;
+					edgeId++;
+				}
 			}
 			ultima = tempo;
 		}
@@ -88,7 +119,7 @@ void carregarFicheiro(string nome, string cor, int line)
 	}
 }
 
-void carregarGraphos()
+void carregarGraphos(int choice)
 {
 	//Inicializar graphos
 	gv = new GraphViewer(1200, 1200, NOT_DYNAMIC);
@@ -97,11 +128,11 @@ void carregarGraphos()
 	gv->defineVertexColor(DEFAULT_COLOR);
 	gv->defineEdgeColor(DEFAULT_COLOR);
 
-	carregarFicheiro("linha1.txt", "red", 1);
-	carregarFicheiro("linha2.txt", "green", 2);
-	carregarFicheiro("linha3.txt", "orange", 3);
-	carregarFicheiro("linha4.txt", "blue", 4);
-	carregarFicheiro("linha5.txt", "pink", 5);
+	carregarFicheiro("linha1.txt", "red", 1, choice);
+	carregarFicheiro("linha2.txt", "green", 2, choice);
+	carregarFicheiro("linha3.txt", "orange", 3, choice);
+	carregarFicheiro("linha4.txt", "blue", 4, choice);
+	carregarFicheiro("linha5.txt", "pink", 5, choice);
 	gv->rearrange();
 }
 
@@ -114,7 +145,7 @@ int getEdgeId(int a, int b){
 	return -1;
 }
 
-void interfaceCliente(){
+void interfaceCliente(int choice){
 	system("CLS");
 	int origem;
 	int destino;
@@ -128,40 +159,56 @@ void interfaceCliente(){
 	cin >> origem;
 	destino = origem;
 	while(destino == origem){
-	cout << "Escolhe o numero da estacao de destino: ";
-	cin >> destino;
-	if(destino ==  origem){
-		cout << "O destino nao pode ser igual a origem, escolhe outra vez." << endl;
-		return;
-	}
-	Estacao est_origem = graph.getVertexSet()[origem - 1]->getInfo();
-	graph.dijkstraShortestPath(graph.getVertexSet()[origem - 1]->getInfo());
-	vector<Estacao> caminho = graph.getPath(graph.getVertexSet()[origem - 1]->getInfo(), graph.getVertexSet()[destino - 1]->getInfo());
-	system("CLS");
-	Estacao last;
-	cout << "O caminho mais curto: " << endl;
-	for(int i = 0; i < caminho.size(); i++){
-		if(i > 0){
-			int id1 = graph.getFirstId(last.getNome());
-			int id2 = graph.getFirstId(caminho[i].getNome());
-			gv->setEdgeColor(getEdgeId(id1,id2), "green");
-			gv->setEdgeThickness(getEdgeId(id1,id2), 8);
+		cout << "Escolhe o numero da estacao de destino: ";
+		cin >> destino;
+		if(destino ==  origem){
+			cout << "O destino nao pode ser igual a origem, escolhe outra vez." << endl;
+			return;
 		}
-		stringstream ss;
-		ss << caminho[i].getNome() << " (linha " << caminho[i].getLinha() << ")";
-		string str = ss.str();
-		cout << str << endl;
-		last = caminho[i];
-	}
-	gv->rearrange();
-	getchar();
+		Estacao est_origem = graph.getVertexSet()[origem - 1]->getInfo();
+		graph.dijkstraShortestPath(graph.getVertexSet()[origem - 1]->getInfo());
+		vector<Estacao> caminho = graph.getPath(graph.getVertexSet()[origem - 1]->getInfo(), graph.getVertexSet()[destino - 1]->getInfo());
+		system("CLS");
+		Estacao last;
+		cout << "O caminho mais curto: " << endl;
+		for(int i = 0; i < caminho.size(); i++){
+			if(i > 0){
+				int id1 = graph.getFirstId(last.getNome());
+				int id2 = graph.getFirstId(caminho[i].getNome());
+				gv->setEdgeColor(getEdgeId(id1,id2), "green");
+				gv->setEdgeThickness(getEdgeId(id1,id2), 8);
+			}
+			stringstream ss;
+			ss << caminho[i].getNome() << " (linha " << caminho[i].getLinha() << ")";
+			string str = ss.str();
+			cout << str << endl;
+			last = caminho[i];
+		}
+		if (choice == 1)
+			cout << "\n\nA distancia percorrida e de cerca de: " << graph.getVertexSet()[destino - 1]->getDist() << " minutos" << endl;
+		else if (choice == 2)
+			cout << "\n\nO tempo total da viagem e de cerca de: " << graph.getVertexSet()[destino - 1]->getDist() << " metros" << endl;
+
+		gv->rearrange();
+		getchar();
 	}
 }
 
+int chooseTypeOfWeight() {
+	int choice = -1;
+	while (choice != 1 && choice != 2) {
+		cout << "O percurso pode ser calculado tendo como critérios:\nEscolha o criterio pelo qual deseja que o percurso seja calculado\n\n\n1.\tO tempo total de viagem\n2.\tA distancia da viagem\n\n";
+		cin >> choice;
+	}
+	return choice;
+}
+
 int main() {
+	int choice = chooseTypeOfWeight();
 	cout << "A carregar...\n";
-	carregarGraphos();
-	interfaceCliente();
+	carregarGraphos(choice);
+	cout << "\n\nAqui é " << choice << endl;
+	interfaceCliente(choice);
 	getchar();
 	return 0;
 }
