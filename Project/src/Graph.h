@@ -39,7 +39,7 @@ public:
 	Vertex(T in);
 	friend class Graph<T>;
 
-	void addEdge(Vertex<T> *dest, double time, double distance, double cost);
+	void addEdge(Vertex<T> *dest, double distance, int line);
 	bool removeEdgeTo(Vertex<T> *d);
 
 	T getInfo() const;
@@ -82,8 +82,8 @@ Vertex<T>::Vertex(T in): info(in), visited(false), processing(false), indegree(0
 
 
 template <class T>
-void Vertex<T>::addEdge(Vertex<T> *dest, double time, double distance, double cost) {
-	Edge<T> edgeD(dest,time, distance, cost);
+void Vertex<T>::addEdge(Vertex<T> *dest, double distance, int line) {
+	Edge<T> edgeD(dest, distance, line);
 	adj.push_back(edgeD);
 }
 
@@ -119,21 +119,19 @@ int Vertex<T>::getIndegree() const {
 template <class T>
 class Edge {
 	Vertex<T> * dest;
-	double time;
 	double distance;
-	double cost;
+	int line;
 public:
-	Edge(Vertex<T> *d, double t, double dis, double c);
+	Edge(Vertex<T> *d, double dis, int l);
 	friend class Graph<T>;
 	friend class Vertex<T>;
 };
 
 template <class T>
-Edge<T>::Edge(Vertex<T> *d, double t, double dis, double c){
+Edge<T>::Edge(Vertex<T> *d, double dis, int l){
 	dest = d;
-	time = t;
 	distance = dis;
-	cost = c;
+	line = l;
 }
 
 
@@ -157,7 +155,7 @@ class Graph {
 
 public:
 	bool addVertex(const T &in);
-	bool addEdge(const T &sourc, const T &dest, double time, double dis, double cost);
+	bool addEdge(const T &sourc, const T &dest, double dis, int line);
 	bool removeVertex(const T &in);
 	bool removeEdge(const T &sourc, const T &dest);
 	vector<T> dfs() const;
@@ -240,7 +238,7 @@ bool Graph<T>::removeVertex(const T &in) {
 }
 
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, double time, double distance, double cost) {
+bool Graph<T>::addEdge(const T &sourc, const T &dest, double distance, int line) {
 	typename vector<Vertex<T>*>::iterator it= vertexSet.begin();
 	typename vector<Vertex<T>*>::iterator ite= vertexSet.end();
 	int found=0;
@@ -254,7 +252,7 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, double time, double distan
 	}
 	if (found!=2) return false;
 	vD->indegree++;
-	vS->addEdge(vD,time,distance,cost);
+	vS->addEdge(vD,distance,line);
 	return true;
 }
 

@@ -13,7 +13,7 @@ Graph<Estacao> graph;
 GraphViewer *gv;
 int edgeId = 0;
 
-void carregarFicheiro(string nome, string cor)
+void carregarFicheiro(string nome, string cor, int line)
 {
 
 	int lastId = -1;
@@ -53,7 +53,8 @@ void carregarFicheiro(string nome, string cor)
 			}
 			else
 			{
-				graph.addEdge(ultima,tempo,0,0,0);
+				double dist = sqrt(((abs(y - ultima.getCoordenadas().gety())) ^ 2) + ((abs(x - ultima.getCoordenadas().getx())) ^ 2));
+				graph.addEdge(ultima, tempo, dist, line);
 				gv->addEdge(edgeId,lastId,id,EdgeType::UNDIRECTED);
 				lastId = id;
 				edgeId++;
@@ -76,11 +77,11 @@ void carregarGraphos()
 	gv->defineVertexColor(DEFAULT_COLOR);
 	gv->defineEdgeColor(DEFAULT_COLOR);
 
-	carregarFicheiro("linha1.txt", "red");
-	carregarFicheiro("linha2.txt", "green");
-	carregarFicheiro("linha3.txt", "orange");
-	carregarFicheiro("linha4.txt", "blue");
-	carregarFicheiro("linha5.txt", "pink");
+	carregarFicheiro("linha1.txt", "red", 1);
+	carregarFicheiro("linha2.txt", "green", 2);
+	carregarFicheiro("linha3.txt", "orange", 3);
+	carregarFicheiro("linha4.txt", "blue", 4);
+	carregarFicheiro("linha5.txt", "pink", 5);
 	gv->rearrange();
 
 }

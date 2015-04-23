@@ -22,7 +22,13 @@ public:
 	}
 	int getId();
 	const int getIdConst();
+	Coordenadas getCoordenadas();
 };
+
+Coordenadas Estacao::getCoordenadas()
+{
+	return coord;
+}
 
 bool operator==(Estacao&a, const Estacao &rhs) {
 	Estacao estacao = rhs;
