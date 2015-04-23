@@ -13,36 +13,46 @@ Graph<Estacao> graph;
 GraphViewer *gv;
 int edgeId = 0;
 
-void carregarFicheiro(string nome, string cor){
+void carregarFicheiro(string nome, string cor)
+{
 
 	int lastId = -1;
 	ifstream myReadFile;
 	myReadFile.open(nome.c_str());
 	string output;
 	Estacao ultima =  Estacao(-1,"",Coordenadas());
-	if (myReadFile.is_open()) {
+	if (myReadFile.is_open())
+	{
 		Estacao tempo;
-		while (!myReadFile.eof()) {
+		int x, y;
+		while (!myReadFile.eof())
+		{
 			getline(myReadFile,output);
 			int id = atoi(output.c_str());
 			getline(myReadFile,output);
 			string nome = output;
 			getline(myReadFile,output);
-			int x = 2 * atoi(output.c_str());
+			x = 2 * atoi(output.c_str());
 			getline(myReadFile,output);
-			int y = 2 * atoi(output.c_str());
-			if(graph.addVertex(Estacao(id,nome,Coordenadas(x,y))) && ultima.getId() < id){
+			y = 2 * atoi(output.c_str());
+			if(graph.addVertex(Estacao(id,nome,Coordenadas(x,y))) && ultima.getId() < id)
+			{
 				gv->addNode(id,x,y);
 				gv->setVertexLabel(id,nome);
 				gv->setVertexColor(id, cor);
 				tempo = Estacao(id,nome,Coordenadas(x,y));
-			}else{
+			}
+			else
+			{
 				gv->setVertexColor(id, "black");
 				tempo = graph.getVertexbyId(id);
 			}
-			if(lastId == -1){
+			if (lastId == -1)
+			{
 				lastId = id;
-			}else{
+			}
+			else
+			{
 				graph.addEdge(ultima,tempo,0,0,0);
 				gv->addEdge(edgeId,lastId,id,EdgeType::UNDIRECTED);
 				lastId = id;
@@ -50,7 +60,9 @@ void carregarFicheiro(string nome, string cor){
 			}
 			ultima = tempo;
 		}
-	}else{
+	}
+	else
+	{
 		cout << "File not opened\n";
 	}
 }
