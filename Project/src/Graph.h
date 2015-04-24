@@ -43,10 +43,16 @@ public:
 	bool removeEdgeTo(Vertex<T> *d);
 
 	T getInfo() const;
+	T*getInfoPointer(){
+		return &info;
+	}
 	void setInfo(T info);
 
 	int getDist() const;
 	int getIndegree() const;
+	int getAdjSize(){
+		return adj.size();
+	}
 	Vertex* path;
 };
 
@@ -164,7 +170,7 @@ public:
 	vector<Vertex<T> * > getVertexSet() const;
 	int getNumVertex() const;
 	vector<Vertex<T>*> bestPathFrom(const T &s);
-
+	void dijkstraShortestPath(const T &s);
 	//exercicio 5
 	Vertex<T>* getVertex(const T &v) const;
 	void resetIndegrees();
@@ -175,6 +181,15 @@ public:
 	void unweightedShortestPath(const T &v);
 	bool isDAG();
 	T getVertexbyId(int id);
+	T*getVertexbyIdPointer(int id);
+	int getFirstId(string nome){
+		for(int i = 0; i < vertexSet.size(); i++){
+			if(vertexSet[i]->getInfo().getNome() == nome && vertexSet[i]->getInfo().getId() >= 0){
+				return vertexSet[i]->getInfo().getId();
+			}
+		}
+		return -1;
+	}
 
 };
 
@@ -494,6 +509,7 @@ vector<T> Graph<T>::getPath(const T &origin, const T &dest){
 		res.push_back( buffer.front() );
 		buffer.pop_front();
 	}
+
 	return res;
 }
 
@@ -541,5 +557,64 @@ T Graph<T>::getVertexbyId(int id){
 	}
 	return vertexSet[0]->getInfo();
 }
+
+template<class T>
+T*Graph<T>::getVertexbyIdPointer(int id){
+	for(int i = 0; i < vertexSet.size();i++){
+		if(vertexSet[i]->getInfo().getId() == id){
+			return vertexSet[i]->getInfoPointer();
+		}
+	}
+	return vertexSet[0]->getInfoPointer();
+}
+
+template<class T>
+void Graph<T>::dijkstraShortestPath(const T &s) {
+
+	for(unsigned int i = 0; i < vertexSet.size(); i++) {
+		vertexSet[i]->path = NULL;
+		vertexSet[i]->dist = INT_INFINITY;
+		vertexSet[i]->processing = false;
+	}
+
+	Vertex<T>* v = getVertex(s);
+	v->dist = 0;
+
+	vector< Vertex<T>* > pq;
+	pq.push_back(v);
+
+	make_heap(pq.begin(), pq.end());
+
+
+	while( !pq.empty() ) {
+
+		v = pq.front();
+		pop_heap(pq.begin(), pq.end());
+		pq.pop_back();
+		for(unsigned int i = 0; i < v->adj.size(); i++) {
+			Vertex<T>* w = v->adj[i].dest;
+			int aValue = v->dist + v->adj[i].distance;
+			int bValue = w->dist;
+			bool condition = aValue < bValue;
+			if(condition) {
+				w->dist = v->dist + v->adj[i].distance;
+				w->path = v;
+				//se já estiver na lista, apenas a actualiza
+				if(!w->processing)
+				{
+					w->processing = true;
+					pq.push_back(w);
+				}
+
+				make_heap (pq.begin(),pq.end(),vertex_greater_than<T>());
+			}
+		}
+	}
+	vector<T> returnVector;
+	for(int i = 0; i < pq.size(); i++){
+		returnVector.push_back(pq[i]->getInfo());
+	}
+}
+
 
 #endif /* GRAPH_H_ */
