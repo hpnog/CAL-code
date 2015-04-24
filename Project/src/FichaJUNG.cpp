@@ -110,6 +110,7 @@ void carregarFicheiro(string nome, string cor, int line, const int choice)
 					edgeId++;
 				}
 			}
+
 			ultima = tempo;
 		}
 	}
