@@ -1,0 +1,112 @@
+65
+IEFP
+381
+315
+66
+Motometer
+380
+335
+67
+S. Cristovao
+368
+335
+68
+Basreal
+345
+318
+69
+Corgobus
+320
+306
+70
+Aerodromo
+306
+316
+71
+Torneiros
+270
+266
+72
+Vila Nova
+240
+251
+73
+B. Vila Nova de Baixo
+217
+240
+44
+
+
+
+74
+Madame Brouillard
+190
+205
+75
+Cruzeiro
+188
+183
+76
+Estacao CP
+185
+171
+77
+C. Boavista
+174
+160
+78
+P. Florestal
+168
+130
+79
+Museu
+157
+150
+80
+Rua Nova
+150
+160
+54
+
+
+
+11
+
+
+
+12
+
+
+
+13
+
+
+
+55
+
+
+
+56
+
+
+
+81
+Boxes
+172
+95
+82
+Pr. 25 Abril
+194
+70
+83
+C. C. Continente
+207
+40
+84
+Cr. Flores
+210
+30
+85
+Flores
+223
+30
