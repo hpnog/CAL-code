@@ -186,9 +186,9 @@ void interfaceCliente(int choice){
 			last = caminho[i];
 		}
 		if (choice == 1)
-			cout << "\n\nA distancia percorrida e de cerca de: " << graph.getVertexSet()[destino - 1]->getDist() << " minutos" << endl;
+			cout << "\n\nO tempo total da viagem e de cerca de: " << graph.getVertexSet()[destino - 1]->getDist() << " minutos" << endl;
 		else if (choice == 2)
-			cout << "\n\nO tempo total da viagem e de cerca de: " << graph.getVertexSet()[destino - 1]->getDist() << " metros" << endl;
+			cout << "\n\nA distancia percorrida e de cerca de: " << graph.getVertexSet()[destino - 1]->getDist() << " metros" << endl;
 
 		gv->rearrange();
 		getchar();
