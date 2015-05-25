@@ -161,11 +161,10 @@ void addPerson()
 	system("pause");
 }
 
-
 void mainMenu()
 {
 	int choice = -1;
-	while (choice < 0 || choice > 4)
+	while (choice < 0 || choice > 5)
 	{
 		system("cls");
 		cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
@@ -176,6 +175,7 @@ void mainMenu()
 		cout << "2 - Friends of Someone specific\n";
 		cout << "3 - Add friendship\n";
 		cout << "4 - Add Person\n";
+		cout << "5 - Rearrange Graphics\n";
 		cout << "0 - Exit\n";
 
 		cin >> choice;
@@ -190,6 +190,8 @@ void mainMenu()
 			addFriendship();
 		else if (choice == 4)
 			addPerson();
+		else if (choice == 5)
+			gv->rearrange();
 
 		choice = -1;
 	}
