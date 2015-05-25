@@ -161,10 +161,110 @@ void addPerson()
 	system("pause");
 }
 
+
+void pre_kmp(string pattern, vector<int> & prefix) //funcoes implementadas nas aulas
+{
+	int m=pattern.length();
+	prefix[0]=-1;
+	int k=-1;
+	for (int q=1; q<m; q++) {
+		while (k>-1 && pattern[k+1]!=pattern[q])
+			k = prefix[k];
+		if (pattern[k+1]==pattern[q]) k=k+1;
+		prefix[q]=k;
+	}
+}
+
+int kmp(string text, string pattern) //funcoes implementadas nas aulas, retorna o numero de ocorrencias
+{
+	int num=0;
+	int m=pattern.length();
+	vector<int> prefix(m);
+	pre_kmp(pattern, prefix);
+
+	int n=text.length();
+
+	int q=-1;
+	for (int i=0; i<n; i++) {
+		while (q>-1 && pattern[q+1]!=text[i])
+			q=prefix[q];
+		if (pattern[q+1]==text[i])
+			q++;
+		if (q==m-1) {
+			num++;
+			q=prefix[q];
+		}
+	}
+	return num;
+}
+
+
+void searchName(){
+	int j = -1;
+	while (j < 0 && j > graph.getVertexSet().size())
+	{
+		system("cls");
+		cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
+				"Ano 2015 - Tema 2 - Pesquisa em Rede\n\n"
+				"\t\tSearch by Name\n\n\n"
+				"Choose the person of whose friends you want to search\n\n\n";
+		for (int i = 0; i < graph.getNumVertex(); i++)
+			cout << graph.getVertexSet()[i]->getId() << " - " << graph.getVertexSet()[i]->getInfo() << endl;
+		cin >> j;
+	}
+	system("cls");
+	cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
+			"Ano 2015 - Tema 2 - Pesquisa em Rede\n\n"
+			"\t\tSearch by Name\n\n\n"
+			"Choose a name to search\n\n\n";
+	string search;
+	cin.ignore();
+	getline(std::cin,search);
+	vector<string> words;
+	int last_space = 0;
+	int count = 0;
+	for(int i = 0; i < search.size(); i++){
+		if(search[i] == ' ' || i + 1 == search.size()){
+			if(last_space != i){
+				int size = i - last_space;
+				if(i + 1 == search.size()) size++;
+				words.push_back(search.substr(last_space,size));
+		}
+			last_space = i + 1;
+		}
+	}
+	system("cls");
+	cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
+				"Ano 2015 - Tema 2 - Pesquisa em Rede\n\n"
+				"\t\tSearch by Name\n\n\n"
+				"Results by order:\n\n\n";
+	vector<string> res = graph.bfs(graph.getVertexSet()[j]);
+	vector<int> num;
+	for(int a = 0; a < res.size(); a++){
+		int value = 0;
+		for(int i = 0; i < words.size() ; i++){
+			value += kmp(res[a], words[i]);
+		}
+		num.push_back(value);
+	}
+	int maxValue = -1;
+	for (int j = 0; j < num.size(); j++)
+		if (num[j] > maxValue)
+			maxValue = num[j];
+
+	for (;maxValue > 0; maxValue--)
+		for (int order = 0; order < res.size(); order++)
+			if (num[order] == maxValue)
+				cout << res[order] << endl;
+
+	cout << "\n\n";
+	system("pause");
+}
+
 void mainMenu()
 {
 	int choice = -1;
-	while (choice < 0 || choice > 5)
+	while (choice < 0 || choice > 6)
 	{
 		system("cls");
 		cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
@@ -176,6 +276,7 @@ void mainMenu()
 		cout << "3 - Add friendship\n";
 		cout << "4 - Add Person\n";
 		cout << "5 - Rearrange Graphics\n";
+		cout << "6 - Search for friends by name\n";
 		cout << "0 - Exit\n";
 
 		cin >> choice;
@@ -192,6 +293,8 @@ void mainMenu()
 			addPerson();
 		else if (choice == 5)
 			gv->rearrange();
+		else if (choice == 6)
+			searchName();
 
 		choice = -1;
 	}
