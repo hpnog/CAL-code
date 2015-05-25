@@ -53,6 +53,8 @@ public:
 	}
 	bool ifEdge(Vertex<T> *dest);
 	Vertex* path;
+
+	vector<Edge<T> > getAdj() const;
 };
 
 
@@ -111,7 +113,10 @@ T Vertex<T>::getInfo() const {
 	return this->info;
 }
 
-
+template <class T>
+vector<Edge<T> > Vertex<T>::getAdj() const {
+	return this->adj;
+}
 
 template <class T>
 void Vertex<T>::setInfo(T info) {
@@ -138,6 +143,8 @@ public:
 	Edge(Vertex<T> *d);
 	friend class Graph<T>;
 	friend class Vertex<T>;
+
+	Vertex<T> * getDest();
 };
 
 template <class T>
@@ -145,8 +152,10 @@ Edge<T>::Edge(Vertex<T> *d){
 	dest = d;
 }
 
-
-
+template <class T>
+Vertex<T> * Edge<T>::getDest(){
+	return dest;
+}
 
 
 /* ================================================================================================
@@ -264,6 +273,7 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest) {
 	}
 	if (found!=2) return false;
 	if(vS->ifEdge(vD)) return false;
+	if(vD->ifEdge(vS)) return false;
 
 	vD->indegree++;
 	vS->addEdge(vD);
@@ -378,7 +388,6 @@ int Graph<T>::maxNewChildren(Vertex<T> *v, T &inf) const {
 	}
 	return maxChildren;
 }
-
 
 template <class T>
 Vertex<T>* Graph<T>::getVertex(const T &v) const {
