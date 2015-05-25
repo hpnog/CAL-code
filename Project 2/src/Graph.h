@@ -53,6 +53,9 @@ public:
 	}
 	bool ifEdge(Vertex<T> *dest);
 	Vertex* path;
+	void pushToAdj(Edge<T> pb){
+		adj.push_back(pb);
+	}
 
 	vector<Edge<T> > getAdj() const;
 };
@@ -105,6 +108,8 @@ template <class T>
 void Vertex<T>::addEdge(Vertex<T> *dest) {
 	Edge<T> edgeD(dest);
 	adj.push_back(edgeD);
+	Edge<T> edgeI(this);
+	dest->pushToAdj(edgeI);
 }
 
 
@@ -563,5 +568,7 @@ T Graph<T>::getVertexbyId(int id){
 	}
 	return vertexSet[0]->getInfo();
 }
+
+
 
 #endif /* GRAPH_H_ */
