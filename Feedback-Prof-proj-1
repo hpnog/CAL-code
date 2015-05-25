@@ -1,7 +1,0 @@
-OUTPUT: especificar que pode haver mais de 1 forma para ir de um vertice A a B (adjacentes);
-
-Na complexidade de DIkstra (complexidade temporal) especificar o "n" - colocar referencias de dikstra
-
-Para testar - usar varias redes com tamanhops diferentes e ligaçoes diferentes
-
-Complexidade espacial: nao usar programacao dinamica - apenas Dikstra
