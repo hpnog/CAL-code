@@ -141,10 +141,28 @@ void addFriendship()
 	system("pause");
 }
 
+void addPerson()
+{
+	string j;
+	system("cls");
+	cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
+			"Ano 2015 - Tema 2 - Pesquisa em Rede\n\n"
+			"\t\tAdd Person\n\n\n";
+	cout << "Name: ";
+	cin.ignore();
+	getline(cin, j, '\n');
+	graph.addVertex(j, tamanho);
+	gv->addNode(tamanho);
+	gv->setVertexLabel(tamanho, j);
+	tamanho++;
+	cout << "\nPerson added.";
+	system("pause");
+}
+
 void mainMenu()
 {
 	int choice = -1;
-	while (choice < 0 || choice > 1)
+	while (choice < 0 || choice > 4)
 	{
 		system("cls");
 		cout << "Conceptcao e Analise de Algoritmos - FEUP\n"
@@ -154,6 +172,7 @@ void mainMenu()
 		cout << "1 - List of People\n";
 		cout << "2 - Friends of Someone specific\n";
 		cout << "3 - Add friendship\n";
+		cout << "4 - Add Person\n";
 		cout << "0 - Exit\n";
 
 		cin >> choice;
@@ -166,6 +185,8 @@ void mainMenu()
 			friendsOfSomeoneSpecific();
 		else if (choice == 3)
 			addFriendship();
+		else if (choice == 4)
+			addPerson();
 
 		choice = -1;
 	}
