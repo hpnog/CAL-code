@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 #include "Graph.h"
 #include "graphviewer.h"
 
@@ -133,10 +134,11 @@ void addFriendship()
 	{
 		gv->addEdge(edgeId,j, q,EdgeType::UNDIRECTED);
 		gv->setEdgeColor(edgeId, LIGHT_GRAY);
+		edgeId++;
 		cout << "\nFrienship created.\n";
 	}
 	else
-		cout << "\nFrienship already exists.\n";
+		cout << "\nFrienship already exists.\n\n";
 
 	system("pause");
 }
@@ -155,9 +157,10 @@ void addPerson()
 	gv->addNode(tamanho);
 	gv->setVertexLabel(tamanho, j);
 	tamanho++;
-	cout << "\nPerson added.";
+	cout << "\nPerson added.\n\n";
 	system("pause");
 }
+
 
 void mainMenu()
 {
@@ -198,8 +201,6 @@ int main()
 			"Ano 2015 - Tema 2 - Pesquisa em Rede\n\n"
 			"Pedro Fraga\nJoao Nogueira\nFilipa Barroso\n\n\n";
 
-	system("pause");
-
 	initializeGraphViewer();
 
 	if(carregarNomes("nomes.txt") == -1)
@@ -215,9 +216,8 @@ int main()
 		exit(EXIT_FAILURE);
 	}
 	cout << "Amizades carregadas\n\n";
-	system("pause");
+
 	mainMenu();
 
-	getchar();
 	return 0;
 }
