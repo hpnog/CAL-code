@@ -175,7 +175,6 @@ class Graph {
 	//exercicio 5
 	int numCycles;
 	void dfsVisit(Vertex<T> *v);
-	void dfsVisit();
 	void getPathTo(Vertex<T> *origin, list<T> &res);
 
 public:
@@ -200,6 +199,8 @@ public:
 	void unweightedShortestPath(const T &v);
 	bool isDAG();
 	T getVertexbyId(int id);
+	void dfsVisit();
+	void setNotVisited();
 
 };
 
@@ -436,6 +437,14 @@ void Graph<T>::dfsVisit() {
 	for (; it !=ite; it++)
 	    if ( (*it)->visited==false )
 	    	dfsVisit(*it);
+}
+
+template <class T>
+void Graph<T>::setNotVisited() {
+	typename vector<Vertex<T>*>::const_iterator it= vertexSet.begin();
+	typename vector<Vertex<T>*>::const_iterator ite= vertexSet.end();
+	for (; it !=ite; it++)
+		(*it)->visited=false;
 }
 
 template <class T>

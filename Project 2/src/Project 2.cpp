@@ -161,7 +161,6 @@ void addPerson()
 	system("pause");
 }
 
-
 void pre_kmp(string pattern, vector<int> & prefix) //funcoes implementadas nas aulas
 {
 	int m=pattern.length();
@@ -198,8 +197,8 @@ int kmp(string text, string pattern) //funcoes implementadas nas aulas, retorna 
 	return num;
 }
 
-
-void searchName(){
+void searchName()
+{
 	int j = -1;
 	while (j < 0 && j > graph.getVertexSet().size())
 	{
@@ -222,7 +221,6 @@ void searchName(){
 	getline(std::cin,search);
 	vector<string> words;
 	int last_space = 0;
-	int count = 0;
 	for(int i = 0; i < search.size(); i++){
 		if(search[i] == ' ' || i + 1 == search.size()){
 			if(last_space != i){
@@ -240,24 +238,26 @@ void searchName(){
 				"Results by order:\n\n\n";
 	vector<string> res = graph.bfs(graph.getVertexSet()[j]);
 	vector<int> num;
-	for(int a = 0; a < res.size(); a++){
+	for(unsigned int a = 0; a < res.size(); a++){
 		int value = 0;
-		for(int i = 0; i < words.size() ; i++){
+		for(unsigned int i = 0; i < words.size() ; i++){
 			value += kmp(res[a], words[i]);
 		}
 		num.push_back(value);
 	}
 	int maxValue = -1;
-	for (int j = 0; j < num.size(); j++)
+	for (unsigned int j = 0; j < num.size(); j++)
 		if (num[j] > maxValue)
 			maxValue = num[j];
 
 	for (;maxValue > 0; maxValue--)
-		for (int order = 0; order < res.size(); order++)
+		for (unsigned int order = 0; order < res.size(); order++)
 			if (num[order] == maxValue)
 				cout << res[order] << endl;
 
 	cout << "\n\n";
+
+	graph.setNotVisited();
 	system("pause");
 }
 
@@ -277,7 +277,14 @@ void mainMenu()
 		cout << "4 - Add Person\n";
 		cout << "5 - Rearrange Graphics\n";
 		cout << "6 - Search for friends by name\n";
-		cout << "0 - Exit\n";
+		cout << "0 - Exit\n\n\n";
+
+		cout << "NOTAS:\n\n"
+				"Na pesquisa, e tida em conta em primeiro lugar o numero de ocorrencias das "
+				"palavras que compoem o campo de pesquisa nos nomes, e seguidamente a sua "
+				"proximidade ao utilizador original.\n\n"
+				"Em relacao a adicao de pessoas e amizades, estas apenas serao validas enquanto"
+				"o programa permanecer aberto.\n\n";
 
 		cin >> choice;
 
