@@ -1,0 +1,98 @@
+Exame de CAL - 2012-13 - epoca recurso
+
+1)
+	NAO SABEMOS
+
+2)
+	void Dijkstra(Vertex s) {
+		for (Vertex v : vertexSet) {v.path = null; v.dist = INFINITY;}
+		
+		s.dist = 0;
+		
+		PriorityQueue<Vertex> q = new PriorityQueue<Vertex>();
+		q.insert(s);
+		while ( ! q.isEmpty() ) {
+			Vertex v = q.extractMin();
+			for(Edge e: v.adj) {
+				Vertex w = e.dest;
+				
+				if (e.weight > v.dist) {			|	if (v.dist + e.weight < w.dist) { 
+					
+					if (e.weight < w.dist)			|	NADA
+						w.dist = e.weight;			|	NADA
+					else							|	NADA
+						continue;					|	NADA
+													|	w.dist = v.dist + e.weight; 
+				}
+				else if (v.dist < w.dist)			|	NADA
+					w.dist = v.dist;				|	NADA
+
+				else								|	NADA
+					continue;						|	NADA
+					
+				w.path = v;
+					
+				if (w.queueIndex == -1) 
+					q.insert(w);
+				else
+					q.decreaseKey(w);
+				}
+			}
+		}
+	} 
+	
+	Explicação:
+		Em primeiro lugar altera-se o significado de 'dist' para a obesidade do caminho com menor obesidade até o vértice.
+		As alterações necessárias são as seguintes:
+			Em vez de fazer a comparação para verificar que o caminho é mais curto, faz-se a comparação para verificar se a aresta pela qual se está a passar aumenta ou não a obesidade do caminho.
+			Se tal acontecer vai-se verificar se no vertice de destino já passou algum caminho com obesidade mais pequena.
+			Se não tiver passado atualiza-se o valor de 'dist' do vertice de destino para a obesidade do caminho atual e continua-se o algoritmo
+			
+			
+			
+3)
+	a)
+					5
+				   / \
+				  /   \
+				 /     \
+			    0       2
+			   / \     / \
+			  3   6   4   8
+			             / \
+						1   7
+	
+	b)
+		'R' e 'P'
+		
+	c)
+		111 00 10 10 01 00 110
+		
+	d)
+		10	01	110	110	00
+		S	E	R	R	A
+		
+4)
+	a)
+		Aplicar Prim.
+		A -> D
+		D -> C
+		C -> B
+		D -> I
+		I -> G
+		G -> E
+		E -> F
+		F -> H
+		
+	b)
+		Seriam necessárias 3 bombas (numero de arvores de expansao minima) pois tratam-se de 3 sistemas de grafos (não conexo)
+	
+5)
+	a) 12
+	
+	b) Não haveria diferença nenhuma
+	
+	c) Aumentaria para 14
+	
+6)
+	NAO SABEMOS

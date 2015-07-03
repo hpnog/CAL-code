@@ -1,0 +1,118 @@
+Exame de CAL
+2011/12 - Época Normal
+
+
+1)
+	a)
+		int indice <- 0;
+		int soma <- 0;
+		Ordenar lista por ordem descrescente de v;
+
+		ENQUANTO (soma < C)
+			Por na mochila o objeto de indice i da lista;
+			soma <- soma + (Peso do ojeto de indice i da lista);
+			i++;
+			SE(i > (tamanho da lista))
+				Sai do ciclo;
+			FIM SE0
+		FIM
+	
+	b)
+		for (int j = 1; j <= numItems; j++){
+  			for (int u = maxWeight; u >= itemWeight[j]; u--){
+   				if (u - itemWeight[j] <= maxWeight){
+   		 			f[u] = max(f[u], f[u - itemWeight[j]] + itemValue[j]);
+	   			}	
+  			}
+ 		}
+2)
+	Fazer reset do caminho e da distancia de cada vertice do grapho;
+	Vertice primeiro <- a;
+	Lista de prioriades q;
+	Inserir primeiro em q;
+	ENQUANTO(q nao estiver vazio)
+		Vertice min <- vertice com menos dist em q; 
+		Remover vertice com menos dist em q;
+		PARA(cada aresta adj de min)
+			Vertice destino <- destino de adj
+			SE((dist de min) + (peso de adj) < (dist de destino))
+				dist de destino = dist de min + peso de adj;
+				caminho de destino =  min;
+				SE(destino nao esta em q)
+					Inserir destino em q;
+				SE NÃO
+					Atualizar prioridade de destino em q;
+				FIM SE
+			FIM SE
+		FIM
+	FIM
+
+	Lista de prioridades final;
+	Vertice ultimo <- f;
+	ENQUANTO(caminho de ultimo for diferente de null(valor dado no reset))
+		inserir ultimo em final;
+		ultimo <- caminho de ultimo;
+	FIM
+
+O resultado está em final
+
+3)
+	a)
+		(em desenho)
+
+	b)
+		Deve estar compreendidada entre 0 e 7 pois assim é menor do que a aresta que liga a D que é a maior entra a aresta que liga a D e a que liga a I.
+
+	c)
+		Vai-se buscar o peso da aresta que liga x e y a cada um dos seus path's. 
+		A Árvore mantém-se igual se w for maior que os dois pesos.
+
+4)
+	Algoritmo:
+	Distancia de Edicao (P, T)
+		De 'i' = 0 até |P|
+			D[i, 0] = i
+		Fim_De
+
+		De 'j' = 0 até |T|
+			D[0, j] = j
+		Fim_De
+
+		De 'i' = 1 até |P|
+			De 'j' = 1 até |T|
+				Se P[i] == T[j]
+					D[i, j] = D[i-1, j-1]
+				Senao
+					D[i, j] = mínimo valor entre
+						1 + D[i-1, j]
+						1 + D[i, j-1]
+						2 + D[i-1, j-1]
+					Fim_Min
+				Fim_Se
+			Fim_De
+		Fim_De
+
+		Retorna D[|P|, |T|]
+	Fim_Algoritmo
+
+	Cálculos (Matrizes):
+		ACGT
+				C 	G	T	A
+			0	1 	2 	3	4
+		A	1 	2 	3 	4 	3
+		C	2 	1 	2 	3 	4
+		G	3 	2 	1 	2 	3
+		T	4	3 	2 	1 	2 <------- Resultado da Comparação entre ACGT e CGTA
+		GAT
+				C 	G 	T 	A
+			0 	1 	2 	3 	4
+		G 	1 	2 	1 	2 	3
+		A 	2 	3 	2 	3 	2
+		T 	3 	4 	3	2 	3 <------- Resultado da Comparação entre GAT e CGTA
+	Resposta Final: A Sequência mais próxima é a seqA.
+	
+5)
+	NAO SEI
+
+6)
+	NAO SEI

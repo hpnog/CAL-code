@@ -1,0 +1,84 @@
+Exame de CAL - recurso 2011-12
+
+1)
+	a)
+		NAO SEI
+	b)
+		Criar uma rede de grafos cujos Nós são os pontos de aluguer e as arestas (dirigidas) são as ligações entre os pontos sendo o seu peso o custo da viagem. Em cada nó há ligações para todos os nós com índice superior.
+		Aplicar o algoritmo de Dijktra a partir de 'i'.
+		O Valor de DIST do Vértice 'n' é o custo mínimo da viagem de 'i' a 'n'.
+
+2)
+	Aplicar algoritmo de Dijktra a partir de a.
+	Criar PriorityQueue ordenada por DIST.
+	A partir de 'f' (introduzindo-o na PriorityQueue) percorrer os seus Path's até que atingam o path 'null' introdindo cada um deles na PriorityQueue.
+	O Conteúdo da PriorityQueue é o menor caminho de 'a' a 'f'.
+
+3)
+	a)
+							19
+						   /  \
+						  /    \
+						 /      \
+						8		 11
+				       / \       / \
+					  /   \     /   \
+					(_)   (o)  /     \
+							  /       \
+							 /         \
+							5           6
+						   / \         / \
+						  2  (a)      3  (r)
+						 / \         / \
+						/   \       /   \
+					   (e)  (u)   (t)    2
+					   					/ \
+					   				   /   \
+					   				 (l)   (h)
+
+	b)
+		01 00 111 101 1100 01
+	c) Havendo 9 caracteres teria de haver 3 bits para representar numeros de 0 -> 8. Desta forma, havendo 19 caracteres teria de usar 19 * 3 bits (57).
+
+	Numero segundo a compressão:
+		4 * 2 + 4 * 2 + 3 * 3 + 3 * 3 + 1 * 4 + 1 * 4 + 1 * 4 + 1 * 5 + 1 * 5 = 56.
+
+	Utilizando a codificação de Huffman usar-se-ia menos 1 bit.
+
+4)
+	a)
+		A tem caminho de Euler pois é um grafo conexo e todos os vértices excepto o inicial e final ('b' e 'e') são de grau par.
+
+		B não tem caminho de Euler pois todos os vértices são de grau par.
+
+	b)
+		Por motivos referidos em (a):
+			B é um circuito de Euler e
+			A não é um circuito de Euler.
+
+	c)
+		a -> f
+		f -> e
+		e -> d
+		d -> f
+		f -> c
+		c -> a
+		a -> d
+		d -> c
+		c -> b
+		b -> a
+
+		(GRAFO B)
+
+	d)
+		É a primeira pois para além de ele ter de verificar todas as intersecções que têm semáforos, tem de verificar essas mesmas intersecções em todas as direcções (verificado ao passar por todas as arestas)
+
+5)
+	a)
+		4000 + 6000 + 2000 = 12000 < 13000 Não permite
+
+	b)
+		C1 -> C4
+
+6)
+			Poderá ler dois livros.

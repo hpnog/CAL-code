@@ -1,0 +1,68 @@
+Exame de CAL - 2013-14 - epoca recurso
+
+1)
+	a)
+		Implementa-se um algoritmo no qual se inicia em v1.
+		Num ciclo em que se incrementa uma variável 'i' em uma unidade a cada dia até 'd',
+		verifica-se qual o maior valor de p[v][i] dos vértices adjacentes e do vértice atual.
+		
+	b)
+		Cria-se uma segunda matriz na qual se guarda os valores totais da pesca ao longo dos dias, mantendo assim informação acerca do total da pescaria em todas as hipoteses.
+		A cada dia que passa guarda-se o valor total na matriz para cada uma das possíveis localizações e no fim escolhe-se o valor final maior.
+		
+2)
+	a)
+		i)
+			A B C E F D - profundidade
+		
+		ii)
+			A B D E C F - largura
+			
+	b)
+		Aplica o algoritmo de Dijkstra a partir de A.
+		Cria uma priorityQueue ordenada por dist.
+		A partir de F introduz os path's na priorityQueue.
+		O resultado final está na priorityQueue.
+		
+		A B E F
+	
+	c)
+		Sim é. Pode fazer a seguinte sequência: A D B C E F
+
+3)
+	a)
+		<Diagrama>
+		
+		O menor tempo de conclusão é 13.
+	b)
+		Dirigir as arestas no sentido da ordenação topológica.
+		
+4)
+	a)
+		17
+	b)
+		100 * 19 * 24 * x
+
+5)
+	a)
+		3 bits
+		total é de 3 * 23 = 69
+	b)
+		i)
+			00 00 0100 0100 0101 0101 0111 1 1
+			r  r  a    a    g    g    p    c c
+			
+			pode representar
+			
+		ii)
+			00 00 0101 0101 0100 0100 0110 1 1
+			r  r  a    a    g    g    p    c c
+			
+			pode representar
+
+6)
+	a)
+		É possível encontrar um caminho no qual o camião passe por todas as arestas sem nunca as repetir, de forma a que comece e acabe na garagem?
+		
+	b)
+		NAO SEI
