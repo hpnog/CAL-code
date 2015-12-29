@@ -1,4 +1,4 @@
-# CAL-code (2 Projetos)
+# FEUP-CAL (2 Projetos)
 
 Este repositório contém o código realizado nas fichas e projetos da Unidade Curricular de CAL - FEUP.
 
